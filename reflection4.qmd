@@ -1,0 +1,33 @@
+Diese Woche wurde der ganze Zyklus der Arbeit mit git und GitHub erarbeitet. Aufbauend darauf, dass man init, add
+und commit gelernt hat, wurde uns heute beigebracht, wie man das lokale Repo auch online hochlädt. 
+Es wurden folgende Punkte bearbeitet: 
+1. Erstellung von persönlichen ssh-Schlüssel, um Lokales mit Externem zu verbinden. 
+2. Eben Verbindung dessen mithilfe von git remote, branch und push.
+3. Man zeigte, wie man die Dateien mit dem Terminal bearbeitet und sie anschließend mit dem Terminal hinzufügt und
+pusht. 
+4. Man hat ebenfalls gesehen, wie es auf Logs zuzugreifen ist. Folglich wurde gezeigt, wie man ältere Versionen von 
+den Dokumenten sieht, sie bearbeitet und wiederherstellt. 
+5. Clon, wie auch merge.
+
+Heutige Befehle:
+* Inspecting
+git status 
+git log --oneline   # do you have any commits?
+git log --oneline --graph   # with branch graph
+git log -- myfile.qmd       # commits that touched one file
+git log HEAD..origin/main --oneline   # commits on remote that you don't have yet
+git diff HEAD origin/main             # line-by-line diff between your local and remote
+git remote -v       # is a GitHub remote configured?
+git show <hash>                  # full diff for that commit
+git show <hash>:practical3.qmd  # the file as it was at that commit
+
+* Editing
+git init
+git add .
+git commit -m "Message"
+git pull (fetching and merging extern und lokal)
+git fetch origin (only online)
+git merge origin/main
+git push
+
+ 
