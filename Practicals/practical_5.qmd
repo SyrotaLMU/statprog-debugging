@@ -84,3 +84,4 @@ ggplot(
 ```bash
 git switch -c "improve-exercise1"
 ```
+Another small change
