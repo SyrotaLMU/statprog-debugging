@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "practical_5.html",
+    "href": "practical_5.html",
+    "title": "StatProg 2",
+    "section": "",
+    "text": "# In terminal:\nquarto create\n# Preview\nquarto preview\n\n\n# Configuration of navbar\n## in: navbar: left: \n- href: docname.qmd\n  text: \"name of the page\"\n# Format configurating\n## in: format: html:\ncode-fold: true # Folding code-panel\ncode-summary: \"Show code\" # Name of the code-panel\ncode-line-numbers: true # Numbers left from the code\ncode-copy: hover # Creating a button for copy\nsyntax-highlighting: github\ncode-block-bg: true # Left line\ncode-block-border-left: \"#31BAE9\" # Color of the left line"
+  },
+  {
+    "objectID": "practical_5.html#creating-and-working-in-quarto-website",
+    "href": "practical_5.html#creating-and-working-in-quarto-website",
+    "title": "StatProg 2",
+    "section": "",
+    "text": "# In terminal:\nquarto create\n# Preview\nquarto preview\n\n\n# Configuration of navbar\n## in: navbar: left: \n- href: docname.qmd\n  text: \"name of the page\"\n# Format configurating\n## in: format: html:\ncode-fold: true # Folding code-panel\ncode-summary: \"Show code\" # Name of the code-panel\ncode-line-numbers: true # Numbers left from the code\ncode-copy: hover # Creating a button for copy\nsyntax-highlighting: github\ncode-block-bg: true # Left line\ncode-block-border-left: \"#31BAE9\" # Color of the left line"
+  },
+  {
+    "objectID": "practical_5.html#executing-and-displaying-r-code-in-quarto",
+    "href": "practical_5.html#executing-and-displaying-r-code-in-quarto",
+    "title": "StatProg 2",
+    "section": "Executing and displaying R code in Quarto",
+    "text": "Executing and displaying R code in Quarto\n\nShow the source, but don’t run it\n{r eval=FALSE}\n\n\nShow code\n# show the source, but don't run it\nlibrary(palmerpenguins)\nhead(penguins)\n\n\n\n\nHiding the source, but showing the output:\n{r echo=FALSE}\n\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\n\n\nRun the code without showing source or output\n{r include=FALSE}\n\n\nLabeling, message, warnings\n#| label: fig-penguins --&gt; After that use @fig-penguins (This link works only WITHIN of the document and cannot be used outside)\n#| fig-cap: \"Scatterplot of Bill Length against Bill Depth\"\n### For turning massages and warnings off: \n{r message=FALSE, warning=FALSE}\n\n\nShow code\nlibrary(tidyverse)\nggplot(\n  data = penguins, \n  mapping = aes(\n    x = bill_length_mm,\n    y = bill_depth_mm, \n    color = species\n  )\n) +\n  geom_point() +\n  labs(\n    title = \"Bill Length vs. Bill Depth by Species\",\n    x = \"Bill Length (in mm)\", \n    y = \"Bill Depth (in mm)\"\n  )\n\n\n\n\n\n\n\n\nFigure 1: Scatterplot of Bill Length against Bill Depth\n\n\n\n\n\nFigure 1"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Danylo Syrota, LMU Student\n\n\nd.syrota@campus.lmu.de"
+  },
+  {
+    "objectID": "about.html#contact-me",
+    "href": "about.html#contact-me",
+    "title": "About",
+    "section": "",
+    "text": "d.syrota@campus.lmu.de"
+  },
+  {
+    "objectID": "practicals.html",
+    "href": "practicals.html",
+    "title": "Practical 1",
+    "section": "",
+    "text": "Practical 1\n\nTopic:\nDate:\nShort summary:\n\n\n\nPractical 5\n\nTopic: Collaborative Coding\nDate: 15.05.2026\nShort summary: Creating, configurating Quarto-Websites"
+  },
+  {
+    "objectID": "reflection-logs.html",
+    "href": "reflection-logs.html",
+    "title": "Week 1:",
+    "section": "",
+    "text": "Week 1:\n\n\nWeek 2:\n\n\nWeek 3:\n\n\nWeek 4 - Version Cintrol & Remotes:\n\nSummary:\n\nssh-key and its set up.\nInspecting logs, branching etc.\n\n\n\n\nWeek 5 - Collaborative Coding:\n\nSummary:"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fortgeschrittenes statistisches Programmieren",
+    "section": "",
+    "text": "Das ist mein Hub für das Modul “Fortgeschrittenes statistisches Programmieren” innerhalb des Studiengangs “Statistik and Data Science”"
+  },
+  {
+    "objectID": "reflection4.html",
+    "href": "reflection4.html",
+    "title": "StatProg 2",
+    "section": "",
+    "text": "Diese Woche wurde der ganze Zyklus der Arbeit mit git und GitHub erarbeitet. Aufbauend darauf, dass man init, add und commit gelernt hat, wurde uns heute beigebracht, wie man das lokale Repo auch online hochlädt. Es wurden folgende Punkte bearbeitet:\n\nErstellung von persönlichen ssh-Schlüssel, um Lokales mit Externem zu verbinden.\nEben Verbindung dessen mithilfe von git remote, branch und push.\nMan zeigte, wie man die Dateien mit dem Terminal bearbeitet und sie anschließend mit dem Terminal hinzufügt und pusht.\nMan hat ebenfalls gesehen, wie es auf Logs zuzugreifen ist. Folglich wurde gezeigt, wie man ältere Versionen von den Dokumenten sieht, sie bearbeitet und wiederherstellt.\nClon, wie auch merge.\n\n\nHeutige Befehle:\n\nConnecting\nssh -T git@github.com # Verify SSH connection\ngit remote add origin git@github.com:YOUR-USERNAME/statprog-debugging.git\ngit branch -M main\ngit push -u origin main\n\n\nInspecting\ngit status # Waht Git currenrly sees\ngit remote -v # is a GitHub remote configured?\n### Browsing the log\ngit log --oneline # one line per commit - do you have any commits?\ngit log --oneline --graph # with branch graph\ngit log-- myfile.qmd # commits that touched one file\n### Inspecting a specific commit\ngit show &lt;hash&gt; # full diff for that commit \ngit show &lt;hash&gt;:practical3.qmd # the file as it was at that commit\n\n\nRestoring\ngit checkout &lt;hash&gt; -- practical3.qmd  # use the hash of the commit BEFORE the break\ngit commit -m \"restore practical3.qmd to pre-break version\"\n\n\nFetching\ngit fetch origin # fetch without merging \n### Inspecting\ngit log HEAD..origin/main --oneline # commits on remote that you don't have yet \ngit diff HEAD origin/main # line-by-line diff between your local and remote \n### Merging\ngit merge origin/main # git pull = git fetch origin + git merge origin/main\n###Editing \ngit init \ngit add . \ngit commit -m \"Message\" \ngit pull # (fetching and merging extern und lokal) \ngit fetch origin # (only online) \ngit merge origin/main \ngit push"
+  }
+]
