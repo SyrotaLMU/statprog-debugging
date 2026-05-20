@@ -1,33 +1,59 @@
-Diese Woche wurde der ganze Zyklus der Arbeit mit git und GitHub erarbeitet. Aufbauend darauf, dass man init, add
-und commit gelernt hat, wurde uns heute beigebracht, wie man das lokale Repo auch online hochlädt. 
-Es wurden folgende Punkte bearbeitet: 
-1. Erstellung von persönlichen ssh-Schlüssel, um Lokales mit Externem zu verbinden. 
-2. Eben Verbindung dessen mithilfe von git remote, branch und push.
-3. Man zeigte, wie man die Dateien mit dem Terminal bearbeitet und sie anschließend mit dem Terminal hinzufügt und
-pusht. 
-4. Man hat ebenfalls gesehen, wie es auf Logs zuzugreifen ist. Folglich wurde gezeigt, wie man ältere Versionen von 
-den Dokumenten sieht, sie bearbeitet und wiederherstellt. 
-5. Clon, wie auch merge.
+---
+titel: Reflection
+---
+changed 
 
-Heutige Befehle:
-* Inspecting
-git status 
-git log --oneline   # do you have any commits?
-git log --oneline --graph   # with branch graph
-git log -- myfile.qmd       # commits that touched one file
-git log HEAD..origin/main --oneline   # commits on remote that you don't have yet
-git diff HEAD origin/main             # line-by-line diff between your local and remote
-git remote -v       # is a GitHub remote configured?
-git show <hash>                  # full diff for that commit
-git show <hash>:practical3.qmd  # the file as it was at that commit
+Diese Woche wurde der ganze Zyklus der Arbeit mit git und GitHub erarbeitet. Aufbauend darauf, dass man init, add und commit gelernt hat, wurde uns heute beigebracht, wie man das lokale Repo auch online hochlädt. Es wurden folgende Punkte bearbeitet:
 
-* Editing
-git init
-git add .
-git commit -m "Message"
-git pull (fetching and merging extern und lokal)
-git fetch origin (only online)
-git merge origin/main
-git push
+1.  Erstellung von persönlichen ssh-Schlüssel, um Lokales mit Externem zu verbinden.
+2.  Eben Verbindung dessen mithilfe von git remote, branch und push.
+3.  Man zeigte, wie man die Dateien mit dem Terminal bearbeitet und sie anschließend mit dem Terminal hinzufügt und pusht.
+4.  Man hat ebenfalls gesehen, wie es auf Logs zuzugreifen ist. Folglich wurde gezeigt, wie man ältere Versionen von den Dokumenten sieht, sie bearbeitet und wiederherstellt.
+5.  Clon, wie auch merge.
 
- 
+#### Heutige Befehle:
+
+##### **Connecting**
+```bash
+ssh -T git@github.com # Verify SSH connection
+git remote add origin git@github.com:YOUR-USERNAME/statprog-debugging.git
+git branch -M main
+git push -u origin main
+```
+
+##### **Inspecting**
+```bash
+git status # What Git currently sees
+git remote -v # is a GitHub remote configured?
+### Browsing the log
+git log --oneline # one line per commit - do you have any commits?
+git log --oneline --graph # with branch graph
+git log-- myfile.qmd # commits that touched one file
+### Inspecting a specific commit
+git show <hash> # full diff for that commit 
+git show <hash>:practical3.qmd # the file as it was at that commit
+```
+
+##### **Restoring**
+```bash
+git checkout <hash> -- practical3.qmd  # use the hash of the commit BEFORE the break
+git commit -m "restore practical3.qmd to pre-break version"
+```
+
+##### **Fetching**
+```bash
+git fetch origin # fetch without merging 
+### Inspecting
+git log HEAD..origin/main --oneline # commits on remote that you don't have yet 
+git diff HEAD origin/main # line-by-line diff between your local and remote 
+### Merging
+git merge origin/main # git pull = git fetch origin + git merge origin/main
+###Editing 
+git init 
+git add . 
+git commit -m "Message" 
+git pull # (fetching and merging extern und lokal) 
+git fetch origin # (only online) 
+git merge origin/main 
+git push 
+```

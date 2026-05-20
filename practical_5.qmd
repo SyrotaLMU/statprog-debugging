@@ -1,0 +1,82 @@
+## Creating and working in Quarto-Website 
+```bash
+# In terminal:
+quarto create
+# Preview
+quarto preview
+```
+### Configurating Website
+```bash
+# Configuration of navbar
+## in: navbar: left: 
+- href: docname.qmd
+  text: "name of the page"
+# Format configurating
+## in: format: html:
+code-fold: true # Folding code-panel
+code-summary: "Show code" # Name of the code-panel
+code-line-numbers: true # Numbers left from the code
+code-copy: hover # Creating a button for copy
+syntax-highlighting: github
+code-block-bg: true # Left line
+code-block-border-left: "#31BAE9" # Color of the left line
+```
+## Executing and displaying R code in Quarto
+#### Show the source, but don't run it
+```bash
+{r eval=FALSE}
+```
+```{r eval=FALSE}
+# show the source, but don't run it
+library(palmerpenguins)
+head(penguins)
+```
+#### Hiding the source, but showing the output:
+```bash
+{r echo=FALSE}
+```
+```{r echo=FALSE}
+# Hide the source, show only the output
+library(palmerpenguins)
+head(penguins)
+```
+#### Run the code without showing source or output
+```bash
+{r include=FALSE}
+```
+```{r include=FALSE}
+# run the code without showing source or output
+library(palmerpenguins)
+head(penguins)
+```
+
+#### Labeling, message, warnings
+```bash
+#| label: fig-penguins --> After that use @fig-penguins (This link works only WITHIN of the document and cannot be used outside)
+#| fig-cap: "Scatterplot of Bill Length against Bill Depth"
+### For turning massages and warnings off: 
+{r message=FALSE, warning=FALSE}
+```
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+#| label: fig-penguins
+#| fig-cap: "Scatterplot of Bill Length against Bill Depth"
+library(tidyverse)
+ggplot(
+  data = penguins, 
+  mapping = aes(
+    x = bill_length_mm,
+    y = bill_depth_mm, 
+    color = species
+  )
+) +
+  geom_point() +
+  labs(
+    title = "Bill Length vs. Bill Depth by Species",
+    x = "Bill Length (in mm)", 
+    y = "Bill Depth (in mm)"
+  )
+```
+
+@fig-penguins
+
+## Branches and stash 
