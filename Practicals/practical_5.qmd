@@ -80,3 +80,7 @@ ggplot(
 @fig-penguins
 
 ## Branches and stash 
+##### Creating new branch
+```bash
+git switch -c "improve-exercise1"
+````

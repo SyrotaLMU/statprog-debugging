@@ -16,7 +16,7 @@ Diese Woche wurde der ganze Zyklus der Arbeit mit git und GitHub erarbeitet. Auf
 ##### **Connecting**
 ```bash
 ssh -T git@github.com # Verify SSH connection
-git remote add origin git@github.com:YOUR-USERNAME/statprog-debugging.git
+git remote add origin git@github.com:SyrotaLMU/statprog-debugging.git
 git branch -M main
 git push -u origin main
 ```
