@@ -80,3 +80,5 @@ ggplot(
 @fig-penguins
 
 ## Branches and stash 
+
+My small change
